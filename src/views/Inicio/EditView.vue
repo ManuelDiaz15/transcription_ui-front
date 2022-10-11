@@ -8,8 +8,8 @@
                 <div class="color_top_edit">
                     <h4> ID: 001 Transcripción Call Center: Ripley. Ejecutivo: Felipe Morales Fecha: 25/08/2022 </h4>
                 </div>
-                <div class="row">
-                    <div class="col-sm-6" v-for="c in [1,2,3,4,5,6,7]" v-bind:key="c.id">
+                <div class="">
+                    <div class="col-sm-6" v-for="c in [1,2,3,4]" v-bind:key="c.id">
                 <div class="linea"></div>
                 <div class="focused color_speaker_edit1">
                   <div>
@@ -18,9 +18,6 @@
                         <p class="p text-left">
                             Thank you for calling ABC Company. My name is Ashley. How may I help you today?
                         </p>
-                    </div>
-                    <div class="input-inferior">
-                        <input type="text" class="input"  v-on:keyup.enter="Agregar " placeholder="Thank you for calling ABC Company. " v-model="eviarContenido"> 
                     </div>
                 </div>
                  </div>
@@ -33,8 +30,8 @@
           <button type="button" class="btn btn-outline-success">Guardar</button>
           </div>
           <audio controls>
-            <source src="horse.ogg" type="audio/ogg">
-            <source src="horse.mp3" type="audio/mpeg">
+            <source src="Desktop\Alloxentric\transcription_ui-front\FALBCSP_20220907-151705_56958208343_557_175429150-all.mp3" type="audio/ogg">
+            <source src="Desktop\Alloxentric\transcription_ui-front\FALBCSP_20220907-151705_56958208343_557_175429150-all.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
            </audio> 
      </div>
