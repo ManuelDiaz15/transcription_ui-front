@@ -47,7 +47,7 @@ const initOptions = {
 }
 
 const keycloak = new Keycloak(initOptions);
-
+Vue.prototype.$keycloak = keycloak
 keycloak.init({ onLoad: initOptions.onLoad }).then((auth) => {
   if (!auth) {
     window.location.reload();

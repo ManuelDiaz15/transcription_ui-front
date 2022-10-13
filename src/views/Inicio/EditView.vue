@@ -8,7 +8,8 @@
                 <div class="color_top_edit">
                     <h4> ID: 001 Transcripción Call Center: Ripley. Ejecutivo: Felipe Morales Fecha: 25/08/2022 </h4>
                 </div>
-                <div class="">
+                <div class="row">
+                <div class="col-6"> <!-- Inicio div para separar la pagina -->
                     <div class="col-sm-6" v-for="c in [1,2,3,4]" v-bind:key="c.id">
                 <div class="linea"></div>
                 <div class="focused color_speaker_edit1">
@@ -20,7 +21,21 @@
                         </p>
                     </div>
                 </div>
-                 </div>
+                 </div> 
+                </div> <!-- Fin div para separar la pagina -->
+                <div class="col-6"><!-- Inicio div para separar la pagina -->
+                 <div class="col-sm-6" v-for="c in [1,2,3,4]" v-bind:key="c.id">
+                <div class="linea"></div>
+                <div class="focused color_speaker_edit1">
+                    <div>
+                       <!--  <v-img contain alt="Alloxentric Agent" src="@/assets/Agent.png" max-height="50"></v-img> --> 
+                        <p class="p text-left"> <input placeholder="Speaker0"></p> <!-- Se utiliza strong para dejar en negrita el texto -->
+                        <!-- la manera en la que se mantiene de ese tamaño es por el style que defini dentro del textarea -->
+                        <textarea name="comentario" rows="5" cols="50" style="resize: both; height: 151px; width: 129px;">Thank you for calling ABC Company. My name is Ashley. How may I help you today?</textarea>
+                    </div>
+                </div>
+                 </div> 
+                </div> <!-- div para separar la pagina -->
                 </div>
             </div> 
         </div>
@@ -30,8 +45,8 @@
           <button type="button" class="btn btn-outline-success">Guardar</button>
           </div>
           <audio controls>
-            <source src="Desktop\Alloxentric\transcription_ui-front\FALBCSP_20220907-151705_56958208343_557_175429150-all.mp3" type="audio/ogg">
-            <source src="Desktop\Alloxentric\transcription_ui-front\FALBCSP_20220907-151705_56958208343_557_175429150-all.mp3" type="audio/mpeg">
+            <source src="@/views/Inicio/FALBCSP_20220907-151705_56958208343_557_175429150-all.mp3" type="audio/ogg">
+            <source src="@/views/Inicio/FALBCSP_20220907-151705_56958208343_557_175429150-all.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
            </audio> 
      </div>
@@ -39,7 +54,7 @@
     </body>
   </template>
   <style>
-  /* Padding que separa los dos colores en TOP*/
+/*    Padding que separa los dos colores en TOP */
   .containerxl_padding{
       padding: 15px;
   }
