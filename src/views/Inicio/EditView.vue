@@ -10,7 +10,7 @@
                 </div>
                 <div class="row">
                 <div class="col-6"> <!-- Inicio div para separar la pagina -->
-                    <div class="col-sm-6" v-for="c in [1,2,3,4]" v-bind:key="c.id">
+                    <div class="" v-for="c in [1,2,3,4]" v-bind:key="c.id">
                 <div class="linea"></div>
                 <div class="focused color_speaker_edit1">
                   <div>
@@ -24,14 +24,14 @@
                  </div> 
                 </div> <!-- Fin div para separar la pagina -->
                 <div class="col-6"><!-- Inicio div para separar la pagina -->
-                 <div class="col-sm-6" v-for="c in [1,2,3,4]" v-bind:key="c.id">
+                 <div class="" v-for="c in [1,2,3,4]" v-bind:key="c.id">
                 <div class="linea"></div>
                 <div class="focused color_speaker_edit1">
                     <div>
                        <!--  <v-img contain alt="Alloxentric Agent" src="@/assets/Agent.png" max-height="50"></v-img> --> 
                         <p class="p text-left"> <input placeholder="Speaker0"></p> <!-- Se utiliza strong para dejar en negrita el texto -->
                         <!-- la manera en la que se mantiene de ese tamaño es por el style que defini dentro del textarea -->
-                        <textarea name="comentario" rows="5" cols="50" style="resize: both; height: 151px; width: 129px;">Thank you for calling ABC Company. My name is Ashley. How may I help you today?</textarea>
+                        <textarea class="col-10" name="comentario" rows="2" cols="40">Thank you for calling ABC Company. My name is Ashley. How may I help you today?</textarea>
                     </div>
                 </div>
                  </div> 
@@ -54,6 +54,10 @@
     </body>
   </template>
   <style>
+  textarea{
+    /* background-color: white; */
+    
+  }
 /*    Padding que separa los dos colores en TOP */
   .containerxl_padding{
       padding: 15px;
