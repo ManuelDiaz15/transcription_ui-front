@@ -6,7 +6,7 @@
          <div class="color_back2_edit">
             <div class="focused">
                 <div class="color_top_edit">
-                    <h4> ID: 001 Transcripción Call Center: Ripley. Ejecutivo: Felipe Morales Fecha: 25/08/2022 </h4>
+                    <h4> ID: 001 Transcripción Call Center: Falabella. Ejecutivo: Jose Perez Fecha: 10/10/22 </h4>
                 </div>
                 <div class="row">
                 <div class="col-6"> <!-- Inicio div para separar la pagina -->
@@ -26,12 +26,12 @@
                 <div class="col-6"><!-- Inicio div para separar la pagina -->
                  <div class="" v-for="c in [1,2,3,4]" v-bind:key="c.id">
                 <div class="linea"></div>
-                <div class="focused color_speaker_edit1">
-                    <div>
+                <div class="focused color_speaker_edit1 rounded-xl">
+                    <div class="form-group">
                        <!--  <v-img contain alt="Alloxentric Agent" src="@/assets/Agent.png" max-height="50"></v-img> --> 
                         <p class="p text-left"> <input placeholder="Speaker0"></p> <!-- Se utiliza strong para dejar en negrita el texto -->
                         <!-- la manera en la que se mantiene de ese tamaño es por el style que defini dentro del textarea -->
-                        <textarea class="col-10" name="comentario" rows="2" cols="40">Thank you for calling ABC Company. My name is Ashley. How may I help you today?</textarea>
+                        <textarea class="col-lg-12" name="comentario" rows="2" cols="40">Thank you for calling ABC Company. My name is Ashley. How may I help you today?</textarea>
                     </div>
                 </div>
                  </div> 
@@ -56,7 +56,11 @@
   <style>
   textarea{
     /* background-color: white; */
-    
+    border: 1px; 
+    padding:0px;
+    margin:0px;
+    overflow: hidden;
+
   }
 /*    Padding que separa los dos colores en TOP */
   .containerxl_padding{
