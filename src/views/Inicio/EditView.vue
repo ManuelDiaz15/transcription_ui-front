@@ -47,7 +47,10 @@
             Your browser does not support the audio element.
            </audio> 
            <div>
+<<<<<<< HEAD
             <v-app id="inspire">
+=======
+>>>>>>> 183b55f5b66ca3edd1990e673a214fb0b003f360
                 <v-row justify="center">
                 <v-dialog
                     v-model="dialog"
@@ -84,7 +87,10 @@
                     </v-card>
                 </v-dialog>
                 </v-row>
+<<<<<<< HEAD
             </v-app>
+=======
+>>>>>>> 183b55f5b66ca3edd1990e673a214fb0b003f360
             </div>
             <div class="text-center">
                 <v-dialog
@@ -356,3 +362,5 @@
   
   
   </style>
+
+  
