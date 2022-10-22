@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>{{ message }}</h2>
-    <v-data-table :headers="headers" :items="desserts" item-key="name" class="elevation-1" :search=search :custom-filter="filterOnlyCapsText" >
+    <v-data-table :headers="headers" @click:row="redirccionar()" :items="desserts" item-key="name" class="elevation-1" :search=search :custom-filter="filterOnlyCapsText" >
       <template v-slot:top>
         <v-text-field v-model=search label="Buscar por id" class="mx-4"></v-text-field>
         <v-btn @click="redirccionar()">Editar</v-btn>
