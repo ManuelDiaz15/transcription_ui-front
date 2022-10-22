@@ -27,8 +27,8 @@
                 <div class="linea"></div>
                 <div class="focused color_speaker_edit1">
                     <div>
-                        <p class="p text-left"> Speaker : <input size="1" v-model="Edit.speaker"></p> 
-                        <textarea class="col-10" name="comentario" rows="2" cols="40" v-model="Edit.transcript"></textarea>
+                        <p class="p text-left"> Speaker : <input v-model="Edit.speaker"></p> 
+                        <textarea class="col-10" name="comentario" rows="2" cols="40"  v-model="Edit.transcript"></textarea>
                     </div>
                 </div>
                  </div> 
@@ -39,13 +39,74 @@
       <div class="mx-3">
          <div class="btn_guardar">
           <h3>Guardar Transcripción</h3>
-          <button type="button" class="btn btn-outline-success">Guardar</button>
+          <button type="button" class="btn btn-outline-success" @click ="dialog = true">Guardar</button>
           </div>
           <audio controls>
             <!-- <source src="@/views/Inicio/FALBCSP_20220907-151705_56958208343_557_175429150-all.mp3" type="audio/ogg">
             <source src="@/views/Inicio/FALBCSP_20220907-151705_56958208343_557_175429150-all.mp3" type="audio/mpeg"> -->
             Your browser does not support the audio element.
            </audio> 
+           <div>
+                <v-row justify="center">
+                <v-dialog
+                    v-model="dialog"
+                    max-width="290"
+                >
+                    <v-card>
+                    <v-card-title class="text-h5">
+                        GUARDAR CAMBIOS?
+                    </v-card-title>
+            
+                    <v-card-text>
+                        RECUERDA QUE SI GUARDAS LOS CAMBIOS SE ALMACENARAN DOS DOCUMENTOS UNO CON Y SIN TU CORRECCIÓN
+                    </v-card-text>
+            
+                    <v-card-actions>
+                        <v-spacer></v-spacer>
+            
+                        <v-btn
+                        color="green darken-1"
+                        text
+                        @click="dialog = false"
+                        >
+                        CANCELAR
+                        </v-btn>
+            
+                        <v-btn
+                        color="green darken-1"
+                        text
+                        @click="dialog = false, loadpage = true"
+                        >
+                        GUARDAR
+                        </v-btn>
+                    </v-card-actions>
+                    </v-card>
+                </v-dialog>
+                </v-row>
+            </div>
+            <div class="text-center">
+                <v-dialog
+                    v-model="loadpage"
+                    hide-overlay
+                    persistent
+                    width="300"
+                >
+                    <v-card
+                    color="primary"
+                    dark
+                    >
+                    <v-card-text>
+                        GUARDANDO EDICIÓN
+                        <v-progress-linear
+                        indeterminate
+                        color="white"
+                        class="mb-0"
+                        ></v-progress-linear>
+                    </v-card-text>
+                    </v-card>
+                </v-dialog>
+                </div>
+
      </div>
     </div>
     </body>
@@ -55,6 +116,8 @@
   export default {
     data () {
             return{
+            dialog: false,
+            loadpage: false,
             listar: [
             {
             speaker: 0,
@@ -211,19 +274,27 @@
             }
 
             ]}
-       }
+       },
+       watch: {
+        loadpage (val) {
+        if (!val) return
+
+        setTimeout(() => (this.loadpage = false, this.$router.push('List') ), 4000)
+        
+        },
+        }
 
   }
  
   </script>
   <style>
   textarea{
-    overflow:hidden;
-  /* demo only: */
-    width:250px;
-    margin:50px auto;
-    display:block;
-    }
+    /* background-color: white; */
+    border: 1px; 
+    padding:0px;
+    margin:0px;
+    overflow: hidden; 
+ }
 /*    Padding que separa los dos colores en TOP */
   .containerxl_padding{
       padding: 15px;
@@ -250,7 +321,6 @@
       padding: 12px;
       padding-bottom: 5px;
       border-radius: 15px;
-      text-align: center;
   }
   /* Color secundario de la Page*/
   .color_back2_edit{
@@ -284,3 +354,5 @@
   
   
   </style>
+
+  
