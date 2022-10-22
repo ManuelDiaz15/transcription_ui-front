@@ -1,10 +1,9 @@
 <template>
   <div>
     <h2>{{ message }}</h2>
-    <v-data-table :headers="headers" @click:row="redirccionar()" :items="desserts" item-key="name" class="elevation-1" :search=search :custom-filter="filterOnlyCapsText" >
+    <v-data-table :headers="headers" @click:row="dialog = true" :items="desserts" item-key="name" class="elevation-1" :search=search :custom-filter="filterOnlyCapsText" >
       <template v-slot:top>
         <v-text-field v-model=search label="Buscar por id" class="mx-4"></v-text-field>
-        <v-btn @click="redirccionar()">Editar</v-btn>
       </template>
       <template body append>
         <tr>
@@ -13,6 +12,28 @@
         </tr>
       </template>
     </v-data-table>
+    <div class="text-center">
+      <v-dialog
+        v-model="dialog"
+        hide-overlay
+        persistent
+        width="300"
+      >
+        <v-card
+          color="primary"
+          dark
+        >
+          <v-card-text>
+            CARGANDO EDICIÓN TRANSCRIPCIÓN
+            <v-progress-linear
+              indeterminate
+              color="white"
+              class="mb-0"
+            ></v-progress-linear>
+          </v-card-text>
+        </v-card>
+      </v-dialog>
+    </div>
   </div>
 </template>
 <script lang="ts">
@@ -21,6 +42,7 @@
     data () {
       return {
         search: '',
+        dialog: false, /* nuevooooooooooooooooooooooooooooooooooooo */
         desserts: [
           {
             id: 1,
@@ -48,7 +70,7 @@
           },
           {
             id: 4,
-            Acertividad: '300%',
+            Acertividad: '30%',
             callcenter: 'Falabella',
             ejecutivo: 'Jose Perez',
             estado: 'pendiente',
@@ -104,6 +126,14 @@
           },
         ],
       }
+    }, /* a qui puse lo del dialog */
+    watch: {
+    dialog (val) {
+      if (!val) return
+
+      setTimeout(() => (this.dialog = false, this.$router.push('edit') ), 4000)
+      
+      },
     },
     computed: {
       headers () {
