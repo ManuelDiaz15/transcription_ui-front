@@ -6,31 +6,33 @@
          <div class="color_back2_edit">
             <div class="focused">
                 <div class="color_top_edit">
-                    <h4> ID: 001 Transcripción Call Center: Ripley. Ejecutivo: Felipe Morales Fecha: 25/08/2022 </h4>
+                    <h4> ID: 1 Transcripción Call Center: Cobro. Ejecutivo: Denis Rivas Fecha: 25/08/2022 </h4>
                 </div>
                 <div class="row">
                 <div class="col-6"> <!-- Inicio div para separar la pagina -->
-
+                    <div class="linea"></div>
+                    <h4>Transcripción Original STT</h4>
                     <div class="" v-for="lista in listar" v-bind:key="lista">
                 <div class="linea"></div>
-                <div class="focused color_speaker_edit1">
+                <div class="focused color_speaker_edit2">
                   <div>
-                       <!--  <v-img contain alt="Alloxentric Agent" src="@/assets/Agent.png" max-height="50"></v-img> --> 
-                    
-                        <p class="p text-left"> Speaker : <strong>{{ lista.speaker }}</strong></p> <!-- Se utiliza strong para dejar en negrita el texto -->
-                        <p class="p text-left">{{ lista.transcript }}</p>
-                            
+                       <!--<v-img id="foto" contain alt="Alloxentric Agent" src="@/assets/Agent.png"> </v-img>
+                        <v-img id="foto2" contain alt="Alloxentric Padlock" src="@/assets/locked-padlock.png"> </v-img> -->
+                        <p class="p text-left"> Speaker : <strong>{{ lista.speaker }}</strong></p>  <!-- Se utiliza strong para dejar en negrita el texto -->
+                        <p class="p text-left">{{ lista.transcript }}</p>    
                     </div>
                 </div>
                  </div> 
                 </div> <!-- Fin div para separar la pagina -->
                 <div class="col-6"><!-- Inicio div para separar la pagina -->
+                    <div class="linea"></div>
+                    <h4>Transcripción Editable</h4>
                  <div class="" v-for="Edit in editar" v-bind:key="Edit">
                 <div class="linea"></div>
                 <div class="focused color_speaker_edit1">
                     <div>
                         <p class="p text-left"> Speaker : <input size="1" v-model="Edit.speaker"></p> 
-                        <textarea class="col-10" name="comentario" rows="2" cols="40"  v-model="Edit.transcript"></textarea>
+                        <textarea class="col-10 p-1" @input ="resize($event)" name="comentario" rows="2" cols="40"  v-model="Edit.transcript"></textarea>
                     </div>
                 </div>
                  </div> 
@@ -115,7 +117,14 @@
   </template>
   <script>
   import { Component, Vue } from 'vue-property-decorator';
+  
   export default {
+    methods: {
+        resize (e){
+            e.target.style.height = '10px'
+            e.target.style.height = `${e.target.scrollHeight}px`
+        }
+    },
     data () {
             return{
             dialog: false,
@@ -285,7 +294,7 @@
         
         },
         }
-
+        
   }
  
   </script>
@@ -298,6 +307,23 @@
     overflow: hidden; 
     height: 34px;
  }
+ #foto{
+    max-width: 10%;
+    height: auto;
+    margin: 20px;
+    padding: 5px;
+    display: inline-block;
+    margin: auto;
+}
+#foto2{
+    max-width: 10%;
+    height: auto;
+    margin: 20px;
+    margin-left: 30%;
+    padding: 5px;
+    display: inline-block;
+    margin: auto;
+}
 /*    Padding que separa los dos colores en TOP */
   .containerxl_padding{
       padding: 15px;
@@ -341,7 +367,12 @@
   }
   /* Color de los div que encierran a los Agent and Customer*/
   .color_speaker_edit1{
-      background: #48a5d1;
+      background: #f8f9fa;
+      box-shadow: 5px 5px 5px 5px #555555;
+      border-radius: 5%;
+  }
+  .color_speaker_edit2{
+      background: #cae3ff;
       box-shadow: 5px 5px 5px 5px #555555;
       border-radius: 5%;
   }
