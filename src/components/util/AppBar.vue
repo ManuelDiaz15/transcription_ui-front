@@ -25,7 +25,7 @@
 				<v-spacer></v-spacer>
 				<v-list>
 					<v-list-item @click="listenLogout"> 
-					<v-list-item-title> 
+					<v-list-item-title class="btn btn-info btn-lg"> 
 						Cerrar Sesión
 					</v-list-item-title>
 					</v-list-item>
