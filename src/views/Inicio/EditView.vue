@@ -298,6 +298,7 @@
 /*    Padding que separa los dos colores en TOP */
   .containerxl_padding{
       padding: 15px;
+    /*   overflow: hidden;  */
   }
   /* Input donde se edita la transcripción*/
   .input-inferior input{
