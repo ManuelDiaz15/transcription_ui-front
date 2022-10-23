@@ -294,11 +294,12 @@
     padding:0px;
     margin:0px;
     overflow: hidden; 
-   /*  Mensaje para Jeremmy */
  }
 /*    Padding que separa los dos colores en TOP */
   .containerxl_padding{
       padding: 15px;
+    /*   overflow: hidden;  */
+      /*   overflow: hidden;  */
   }
   /* Input donde se edita la transcripción*/
   .input-inferior input{
