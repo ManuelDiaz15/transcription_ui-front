@@ -59,29 +59,12 @@
 					subMenus: [],
 				},
 				{ /* se creo otra opcion para el menu */
-					title: 'About' as string,
-					urlName: 'AboutView',
-					parent: 'dashboardInicio',
-					subMenus: [],
-				},
-				{ /* se creo otra opcion para el menu */
-					title: 'Edit' as string,
-					urlName: 'EditView',
-					parent: 'dashboardInicio',
-					subMenus: [],
-				},
-				{ /* se creo otra opcion para el menu */
-					title: 'List' as string,
+					title: 'Listado de Transcripcion' as string,
 					urlName: 'ListView',
 					parent: 'dashboardInicio',
 					subMenus: [],
-				},
-				{ /* se creo otra opcion para el menu */
-					title: 'Form' as string,
-					urlName: 'FormView',
-					parent: 'dashboardInicio',
-					subMenus: [],
 				}
+				
 		]
 		public changeRoute(to: INavigator) {
 				if (to.title === 'Salir') {

@@ -10,11 +10,13 @@
                 </div>
                 <div class="row">
                 <div class="col-6"> <!-- Inicio div para separar la pagina -->
+
                     <div class="" v-for="lista in listar" v-bind:key="lista">
                 <div class="linea"></div>
                 <div class="focused color_speaker_edit1">
                   <div>
                        <!--  <v-img contain alt="Alloxentric Agent" src="@/assets/Agent.png" max-height="50"></v-img> --> 
+                    
                         <p class="p text-left"> Speaker : <strong>{{ lista.speaker }}</strong></p> <!-- Se utiliza strong para dejar en negrita el texto -->
                         <p class="p text-left">{{ lista.transcript }}</p>
                             
@@ -299,8 +301,6 @@
 /*    Padding que separa los dos colores en TOP */
   .containerxl_padding{
       padding: 15px;
-    /*   overflow: hidden;  */
-      /*   overflow: hidden;  */
   }
   /* Input donde se edita la transcripción*/
   .input-inferior input{
@@ -325,6 +325,7 @@
       padding-bottom: 5px;
       border-radius: 15px;
       text-align: center;
+      box-shadow: 5px 5px 5px 5px #888888;
   }
   /* Color secundario de la Page*/
   .color_back2_edit{
@@ -341,6 +342,8 @@
   /* Color de los div que encierran a los Agent and Customer*/
   .color_speaker_edit1{
       background: #48a5d1;
+      box-shadow: 5px 5px 5px 5px #555555;
+      border-radius: 5%;
   }
   /* Linea que separa los Agent de Customer */
   .linea {
