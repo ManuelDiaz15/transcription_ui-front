@@ -27,7 +27,7 @@
                 <div class="linea"></div>
                 <div class="focused color_speaker_edit1">
                     <div>
-                        <p class="p text-left"> Speaker : <input v-model="Edit.speaker"></p> 
+                        <p class="p text-left"> Speaker : <input size="1" v-model="Edit.speaker"></p> 
                         <textarea class="col-10" name="comentario" rows="2" cols="40"  v-model="Edit.transcript"></textarea>
                     </div>
                 </div>
@@ -294,6 +294,7 @@
     padding:0px;
     margin:0px;
     overflow: hidden; 
+    height: 34px;
  }
 /*    Padding que separa los dos colores en TOP */
   .containerxl_padding{
@@ -323,6 +324,7 @@
       padding: 12px;
       padding-bottom: 5px;
       border-radius: 15px;
+      text-align: center;
   }
   /* Color secundario de la Page*/
   .color_back2_edit{
