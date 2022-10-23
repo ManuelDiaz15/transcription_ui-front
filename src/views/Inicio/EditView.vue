@@ -11,7 +11,7 @@
                 <div class="row">
                 <div class="col-6"> <!-- Inicio div para separar la pagina -->
                     <div class="linea"></div>
-                    <h4>Transcripción Original STT</h4>
+                    <h4 style="text-align: center;">Transcripción Original STT</h4>
                     <div class="" v-for="lista in listar" v-bind:key="lista">
                 <div class="linea"></div>
                 <div class="focused color_speaker_edit2">
@@ -26,7 +26,7 @@
                 </div> <!-- Fin div para separar la pagina -->
                 <div class="col-6"><!-- Inicio div para separar la pagina -->
                     <div class="linea"></div>
-                    <h4>Transcripción Editable</h4>
+                    <h4 style="text-align: center;">Transcripción Editable</h4>
                  <div class="" v-for="Edit in editar" v-bind:key="Edit">
                 <div class="linea"></div>
                 <div class="focused color_speaker_edit1">
@@ -43,13 +43,25 @@
       <div class="mx-3">
          <div class="btn_guardar">
           <h3>Guardar Transcripción</h3>
-          <button type="button" class="btn btn-outline-success" @click ="dialog = true">Guardar</button>
+         <!--  <button type="button" class="btn btn-lg btn-secundary" @click ="dialog = true">Guardar</button> -->
+          <v-btn
+            block
+            elevation="10"
+            large
+            rounded
+            type="button"
+            @click ="dialog = true"
+            >Guardar
+            </v-btn>
           </div>
-          <audio controls>
+          <div class="btn_box_media" >
+          <h3>Reproductor de audio</h3>
+            <audio controls>
             <!-- <source src="@/views/Inicio/FALBCSP_20220907-151705_56958208343_557_175429150-all.mp3" type="audio/ogg">
             <source src="@/views/Inicio/FALBCSP_20220907-151705_56958208343_557_175429150-all.mp3" type="audio/mpeg"> -->
             Your browser does not support the audio element.
            </audio> 
+          </div>
            <div>
                 <v-row justify="center">
                 <v-dialog
@@ -117,7 +129,7 @@
   </template>
   <script>
   import { Component, Vue } from 'vue-property-decorator';
-  
+
   export default {
     methods: {
         resize (e){
@@ -338,11 +350,22 @@
       background: #1d67cd;
   }
   .btn_guardar{
+      border-radius: 5%;
       padding: 10px;
       margin: auto;
       width: 100%;
       font-size: 16px;
-      background: #1dcdbb;
+      background: #78ecd5;
+      box-shadow: 5px 5px 5px 5px #555555;
+  }
+  .btn_box_media{
+      border-radius: 5%;
+      padding: 10px;
+      margin-top: 8%;
+      width: 100%;
+      font-size: 16px;
+      background: #78ecd5;
+      box-shadow: 5px 5px 5px 5px #555555;
   }
   /* ID, CALL CENTER, AGENT, DATE */
   .color_top_edit {
