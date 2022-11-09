@@ -6,33 +6,34 @@
          <div class="color_back2_edit">
             <div class="focused">
                 <div class="color_top_edit">
-                    <h4> ID: 1 Transcripción Call Center: Cobro. Ejecutivo: Denis Rivas Fecha: 25/08/2022 </h4>
+                    <h4 class="font"> ID: 1 Transcripción Call Center: Cobro. Ejecutivo: Denis Rivas Fecha: 25/08/2022 </h4>
                 </div>
                 <div class="row">
                 <div class="col-6"> <!-- Inicio div para separar la pagina -->
                     <div class="linea"></div>
-                    <h4 style="text-align: center;">Transcripción Original STT</h4>
+                    <h4 class="font" style="text-align: center;">Transcripción Original STT</h4>
                     <div class="" v-for="lista in listar" v-bind:key="lista">
                 <div class="linea"></div>
                 <div class="focused color_speaker_edit2">
-                  <div>
+                  <div class="">
                        <!--<v-img id="foto" contain alt="Alloxentric Agent" src="@/assets/Agent.png"> </v-img>
                         <v-img id="foto2" contain alt="Alloxentric Padlock" src="@/assets/locked-padlock.png"> </v-img> -->
-                        <p class="p text-left"> Speaker : <strong>{{ lista.speaker }}</strong></p>  <!-- Se utiliza strong para dejar en negrita el texto -->
-                        <p class="p text-left">{{ lista.transcript }}</p>    
+                        <p class="p text-left font"> Speaker : <strong>{{ lista.speaker }}</strong></p>  <!-- Se utiliza strong para dejar en negrita el texto -->
+                        <p class="p text-left font">{{ lista.transcript }}</p>    
+                        <div class="linea2"></div>
                     </div>
                 </div>
                  </div> 
                 </div> <!-- Fin div para separar la pagina -->
                 <div class="col-6"><!-- Inicio div para separar la pagina -->
                     <div class="linea"></div>
-                    <h4 style="text-align: center;">Transcripción Editable</h4>
+                    <h4 class="font" style="text-align: center;">Transcripción Editable</h4>
                  <div class="" v-for="Edit in editar" v-bind:key="Edit">
                 <div class="linea"></div>
                 <div class="focused color_speaker_edit1">
                     <div>
-                        <p class="p text-left"> Speaker : <input size="1" v-model="Edit.speaker"></p> 
-                        <textarea class="col-10 p-1" @input ="resize($event)" name="comentario" rows="2" cols="40"  v-model="Edit.transcript"></textarea>
+                        <p class="p text-left font "> Speaker : <input size="1" v-model="Edit.speaker"></p> 
+                        <v-textarea class="col-10 p-1" @input ="resize($event)" name="comentario" rows="2" cols="40" auto-grow v-model="Edit.transcript"></v-textarea>
                     </div>
                 </div>
                  </div> 
@@ -42,7 +43,7 @@
         </div>
       <div class="mx-3">
          <div class="btn_guardar">
-          <h3>Guardar Transcripción</h3>
+            <h3 class="font">Guardar Transcripción</h3>
          <!--  <button type="button" class="btn btn-lg btn-secundary" @click ="dialog = true">Guardar</button> -->
           <v-btn
             block
@@ -55,7 +56,7 @@
             </v-btn>
           </div>
           <div class="btn_box_media" >
-          <h3>Reproductor de audio</h3>
+          <h3 class="font">Reproductor de audio</h3>
             <audio controls>
             <!-- <source src="@/views/Inicio/FALBCSP_20220907-151705_56958208343_557_175429150-all.mp3" type="audio/ogg">
             <source src="@/views/Inicio/FALBCSP_20220907-151705_56958208343_557_175429150-all.mp3" type="audio/mpeg"> -->
@@ -69,11 +70,11 @@
                     max-width="290"
                 >
                     <v-card>
-                    <v-card-title class="text-h5">
+                    <v-card-title class="text-h5 font">
                         GUARDAR CAMBIOS?
                     </v-card-title>
             
-                    <v-card-text>
+                    <v-card-text class="font">
                         RECUERDA QUE SI GUARDAS LOS CAMBIOS SE ALMACENARAN DOS DOCUMENTOS UNO CON Y SIN TU CORRECCIÓN
                     </v-card-text>
             
@@ -81,6 +82,7 @@
                         <v-spacer></v-spacer>
             
                         <v-btn
+                        class="font"
                         color="green darken-1"
                         text
                         @click="dialog = false"
@@ -111,7 +113,7 @@
                     color="primary"
                     dark
                     >
-                    <v-card-text>
+                    <v-card-text class="font">
                         GUARDANDO EDICIÓN
                         <v-progress-linear
                         indeterminate
@@ -318,6 +320,7 @@
     margin:0px;
     overflow: hidden; 
     height: 34px;
+    font-family: Nunito;
  }
  #foto{
     max-width: 10%;
@@ -335,6 +338,8 @@
     padding: 5px;
     display: inline-block;
     margin: auto;
+}.font{
+    font-family: Nunito;
 }
 /*    Padding que separa los dos colores en TOP */
   .containerxl_padding{
@@ -378,11 +383,11 @@
   }
   /* Color secundario de la Page*/
   .color_back2_edit{
-      background: #78ecd5;
+      background: #F9F9F9;
   }
   /* Color principal de la Page*/
   .color_back1_edit{
-      background: #abf8e5;
+      background: #F9F9F9;
   }
   /* Padding encargado de centrar los div más pequeños */
   .focused{
@@ -390,23 +395,27 @@
   }
   /* Color de los div que encierran a los Agent and Customer*/
   .color_speaker_edit1{
-      background: #f8f9fa;
+      background: #F9F9F9;
       box-shadow: 5px 5px 5px 5px #555555;
       border-radius: 5%;
   }
   .color_speaker_edit2{
-      background: #cae3ff;
+      background: #d9d9d9;
       box-shadow: 5px 5px 5px 5px #555555;
       border-radius: 5%;
   }
   /* Linea que separa los Agent de Customer */
   .linea {
-      border-top: 2px solid rgb(191, 245, 229);
+      border-top: 2px solid #FAF7F0;
       height: 2px;
       padding: 0;
       margin: 40px auto 0 auto;
       margin-bottom: 40px;
       overflow: auto;
+  }
+  .linea2 {
+      border-top: 2px solid #e8e6e6;
+      margin-bottom: 5%;
   }
   ::placeholder {
       /* Se aplica específicamente al texto del placeholder */
