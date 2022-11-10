@@ -40,7 +40,7 @@
 </template>
 
 <script lang="ts">
-  import {Vue, Component} from 'vue-property-decorator';
+  import { Component} from 'vue-property-decorator';
   import { INavigator } from '@/model/util/INavigator'; 
 
 @Component({
@@ -61,6 +61,12 @@
 				{ /* se creo otra opcion para el menu */
 					title: 'Listado de Transcripcion' as string,
 					urlName: 'ListView',
+					parent: 'dashboardInicio',
+					subMenus: [],
+				},
+				{ /* se creo otra opcion para el menu */
+					title: 'get' as string,
+					urlName: 'FormView',
 					parent: 'dashboardInicio',
 					subMenus: [],
 				}

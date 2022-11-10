@@ -1,67 +1,96 @@
 <template>
-    <div class>
-        <v-container>
-            <h1>hola</h1>
-            <v-form @submit.prevent="getData()">
-                <v-text-field v-model= "hablante1" :counter="30" label="Hablante N° 1"></v-text-field>
-                <v-text-field v-model= "hablante2" :counter="30" label="Hablante N° 2"></v-text-field>
-                <v-text-field v-model= "compañia" :counter="30" label="Nombre de la compañia"></v-text-field>
-                <v-text-field v-model= "porcentajeAcertividad" :counter="30" label="Porcentaje de acertividad (numero entre el 1 al 100)"></v-text-field>
-                <v-text-field v-model= "frace1" :counter="30" label="Frace del hablante 1"></v-text-field>
-                <v-text-field v-model= "frace2" :counter="30" label="Frace del hablante 2"></v-text-field>
-                <v-btn color="success" class="mr-4" type="submit">Enviar Registro</v-btn>
-                <v-btn color="error" class="mr-4">Limpiar</v-btn>
-            </v-form>
-        </v-container>
+    <div>
+      <v-data-table :headers="headers" @click:row="dialog = true" :items="Transcripciones" item-key="name"
+        class="elevation-1" :search=search :custom-filter="filterOnlyCapsText">
+        <template v-slot:top>
+          <v-text-field v-model=search label="Buscar por id" class="mx-4"></v-text-field>
+        </template>
+        <template body append>
+          <tr>
+            <td></td>
+            <td colspan="4"></td>
+          </tr>
+        </template>
+      </v-data-table>
+      <div class="text-center">
+        <v-dialog v-model="dialog" hide-overlay persistent width="300">
+          <v-card color="primary" dark>
+            <v-card-text>
+              CARGANDO EDICIÓN TRANSCRIPCIÓN
+              <v-progress-linear indeterminate color="white" class="mb-0"></v-progress-linear>
+            </v-card-text>
+          </v-card>
+        </v-dialog>
+      </div>
     </div>
-</template>
-<script lang="ts" >
-    import axios from 'axios'
-	import { Component, Vue } from 'vue-property-decorator';
-	import { internet } from '@/utils/Internet';
-	import { AxiosResponse } from 'axios';
-	import Util from '@/utils/Util';
-
-
-@Component({
-	name: 'UserView',
-})
-
-export default class UserView extends Vue {
-    public isLoading = false;
-    public hablante1 = null;
-    public hablante2 = null;
-    public compañia = null;
-    public porcentajeAcertividad = null;
-    public frace1 = null;
-    public frace2 = null;
-
-    data(){
-        return{
-            atributos:{
-                hablante1: null,
-                hablante2: null,
-                compañia: null,
-                porcentajeAcertividad: null,
-                frace1: null,
-                frace2: null
-            }
+  </template>
+  <script lang="ts">
+  import axios from "axios";
+  
+  export default {
+  
+    mounted(): void {
+      this.getData();
+    },
+  
+    data() {
+      return {
+        search: '',
+        dialog: false,
+        Transcripciones: [],
+        
+      }
+    },
+    methods: {
+      filterOnlyCapsText(value, search, item) {
+        return value != null &&
+          search != null &&
+          typeof value == 'number' &&
+          value.toString().toLocaleUpperCase().indexOf(search) !== -1
+      },
+      redirccionar() {
+        this.$router.push('edit')
+      },
+  
+      async getData() {
+        let headersList = {
+          "Accept": "*/*",
+          "User-Agent": "Thunder Client (https://www.thunderclient.com)",
+          "Content-Type": "application/json",
+          "Authorization": "Basic dXN1YXJpbzE6dXN1YXJpbzE="
         }
-    }   
-        getData(){
-            axios({
-                method:'post',
-                url:'/save',
-                data:{
-                    hablante1: this.hablante1,
-                    hablante2: this.hablante2,
-                    compañia: this.compañia,
-                    porcentajeAcertividad: this.porcentajeAcertividad,
-                    frace1: this.frace1,
-                    frace2: this.frace2
-                }
-            }
-            )
+        let reqOptions = {
+          url: "http://localhost:9090/Transcripciones",
+          method: "GET",
+          headers: headersList,
         }
-    } 
-</script>
+        let response = await axios.request(reqOptions);
+        this.Transcripciones = JSON.parse(response.data)
+        console.log(this.Transcripciones);
+      }
+    },
+  
+    watch: {
+      dialog(val) {
+        if (!val) return
+        setTimeout(() => (this.dialog = false, this.$router.push('edit')), 4000)
+      },
+    },
+    computed: {
+      headers() {
+        return [
+          { text: 'Nombre del audio', value: 'AudioNombre' },
+          { text: 'Asertividad', value: 'Confidence' },
+          { text: 'Campañia', value: 'Campania' },
+          { text: 'Cliente', value: 'Cliente' },
+  
+        ]
+      },
+    },
+  }
+  </script>
+  <style>
+  .body {
+    background-color: #c0e9d5;
+  }
+  </style>
