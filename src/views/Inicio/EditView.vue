@@ -11,7 +11,7 @@
                 <div class="row">
                 <div class="col-6"> <!-- Inicio div para separar la pagina -->
                     <div class="linea"></div>
-                    <h4 class="font" style="text-align: center;">Transcripción Original STT</h4>
+                    <h3 class="font" style="text-align: center;">Transcripción Original STT</h3>
                     <div class="" v-for="lista in listar" v-bind:key="lista">
                 <div class="linea"></div>
                 <div class="focused color_speaker_edit2">
@@ -27,7 +27,7 @@
                 </div> <!-- Fin div para separar la pagina -->
                 <div class="col-6"><!-- Inicio div para separar la pagina -->
                     <div class="linea"></div>
-                    <h4 class="font" style="text-align: center;">Transcripción Editable</h4>
+                    <h3 class="font" style="text-align: center;">Transcripción Editable</h3>
                  <div class="" v-for="Edit in editar" v-bind:key="Edit">
                 <div class="linea"></div>
                 <div class="focused color_speaker_edit1">
@@ -410,7 +410,6 @@
       height: 2px;
       padding: 0;
       margin: 40px auto 0 auto;
-      margin-bottom: 40px;
       overflow: auto;
   }
   .linea2 {
