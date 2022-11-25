@@ -1,0 +1,32 @@
+export interface TranscriptAll {
+    AudioNombre:string; 
+    AudioRuta:string;
+    ArchicMetadata:string;
+    Estado:string;
+    Campania:string;
+    Cliente:string;
+    Fecha:string;
+    FechaTranscripcion:string;
+    HoraTranscripcion:string;
+    MT_DNIS:string;
+    MT_Destinatario:string;
+    MT_DireccionLLamada:string;
+    MT_Ejecutivo:string;
+    MT_FechaLlamada:string;
+    MT_Folio:string;
+    MT_IDScript:string;
+    MT_MotivoMora:string;
+    MT_NombreAudio:string;
+    MT_NombreScript:string;
+    MT_RutDestinatario:string;
+    MT_TiempoLLamado:string;
+    MT_TipoLlamadaCodigo:string;
+    MT_TipoLlamadaNombre:string;
+    MT_UnidadNegocio:string;
+    TiempoAudio:string;
+    TiempoSilencio:string;
+    Agent_spk:string;
+    Confidence:string;
+    TranscritoChat:Array<object>;
+    MotivoMoraCX:string;
+}

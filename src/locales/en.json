@@ -1,7 +1,41 @@
 {
   "Main": {
-    "message": "Hello World from Home",
+    "message": "Welcome to the Hybrid Audio Transcription Interface",
     "message2": "Testing i18n",
     "message3": "Connected to Back "
+  },
+  "Edit":{
+    "Medit1": "Original Transcript STT",
+    "Medit2": "Editable Transcript",
+    "Medit3": "Save Transcript",
+    "Medit4": "Save",
+    "Medit5": "Audioplayer",
+    "Medit6": "Speaker",
+    "Medit7": "Start",
+    "Medit8": "SAVE CHANGES?",
+    "Medit9": "REMEMBER THAT IF YOU SAVE THE CHANGES, TWO DOCUMENTS ARE STORED, ONE WITH AND WITHOUT YOUR CORRECTION",
+    "Medit10": "CANCEL",
+    "Medit11": "SAVE",
+    "Medit12": "SAVING EDITION",
+    "Medit13": "Executive Name:"
+  },
+  "List":{
+    "Mlist1":"Audio name",
+    "elementPerPage": "Items per page",
+    "countElementPage": "From $1 to $2",
+    "Mlist2":"Assertiveness",
+    "Mlist3":"campaign",
+    "Mlist4":"Client",
+    "Mlist5":"Search",
+    "Mlist6":"LOADING EDITION TRANSCRIPT",
+    "Mlist7":"Executive"
+  },
+  "Navig":{
+    "Mnavig1": "Navigation menu",
+    "Mnavig2": "Home",
+    "Mnavig3": "List of transcript",
+    "Mnavig4": "Logout",
+    "Mnavig5": "History"
+      
   }
 }

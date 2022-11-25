@@ -1,8 +1,45 @@
 
 {
     "Main": {
-      "message": "Hola Mundo desde el Inicio",
+      "message": "Bienvenido a la Interfaz de Transcripción Híbrida de Audio",
       "message2": "Probando i18n",
       "message3": "Conectado al Back !"
+    },
+    "Edit":{
+      "Medit1": "Transcripción Original STT",
+      "Medit2": "Transcripción Editable",
+      "Medit3": "Guardar Transcripción",
+      "Medit4": "Guardar",
+      "Medit5": "Reproductor de audio",
+      "Medit6": "Hablante",
+      "Medit7": "Inicio",
+      "Medit8": "¿GUARDAR CAMBIOS?",
+      "Medit9": "RECUERDA QUE SI GUARDAS LOS CAMBIOS SE ALMACENARAN DOS DOCUMENTOS UNO CON Y SIN TU CORRECCIÓN",
+      "Medit10": "CANCELAR",
+      "Medit11": "GUARDAR",
+      "Medit12": "GUARDANDO EDICIÓN",
+      "Medit13": "Nombre del Ejecutivo:"
+
+    },
+    "List":{
+      "Mlist1":"Nombre del audio",
+      "elementPerPage": "Elementos por página",
+      "countElementPage": "Desde $1 hasta $2",
+      "Mlist2":"Asertividad",
+      "Mlist3":"Campaña",
+      "Mlist4":"Cliente",
+      "Mlist5":"Buscar",
+      "Mlist6":"CARGANDO EDICIÓN TRANSCRIPCIÓN",
+      "Mlist7":"Ejecutivo"
+
+
+    
+    },
+    "Navig":{
+      "Mnavig1": "Menú de Navegación",
+      "Mnavig2": "Inicio",
+      "Mnavig3": "Listado de transcripciones",
+      "Mnavig4": "Cerrar Sesión",
+      "Mnavig5": "Historial"
     }
   }

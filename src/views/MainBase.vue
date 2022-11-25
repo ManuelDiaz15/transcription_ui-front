@@ -1,13 +1,13 @@
 <template>
-  <v-card>
+  <v-card :key="reRenderVar">
     <App-Navigator />
-    <App-Bar />
+    <App-Bar @changeEvent="reRender"/>
 
     <!-- No se veía nada porque faltaba esta linea
     que va en el App.vue, que es importante para que se visualicen
     las vistas, ya que sin esto sólamente estaríamos mostrando 
     los 3 componentes (Navigator, Bar y Footer) -->
-    <router-view></router-view> 
+    <router-view @changeEvent="reRender"></router-view> 
 
     <App-Footer />
 
@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts">
-  import { Component, Vue, Prop} from 'vue-property-decorator';
+  import { Component, Vue} from 'vue-property-decorator';
   import AppBar from '@/components/util/AppBar.vue';
   import AppNavigator from '@/components/util/AppNavigator.vue';
   import AppFooter from '@/components/util/AppFooter.vue';
@@ -29,9 +29,18 @@
     },
   })
   export default class MainBase extends Vue {
-		
-
-		
+    public reRenderVar = 0;
+    public reRender(lang:string) {
+      console.log("Recibido en MAIN BASE");
+      this.reRenderVar += 1;
+      this.$emit('changeEvent');
+    }
 	}
 	
 </script>
+
+
+
+
+
+

@@ -5,7 +5,7 @@ import MainInicio from '../views/Inicio/MainInicio.vue'
 import AboutView from '../views/AboutView.vue'
 import EditView from '../views/Inicio/EditView.vue'
 import ListView from '../views/Inicio/ListView.vue'
-import FormView from '../views/Inicio/FormView.vue'
+import Historial from '../views/Inicio/Historial.vue'
 
 Vue.use(VueRouter)
 
@@ -36,9 +36,9 @@ const routes: Array<RouteConfig> = [
       component: ListView
     },
     { /* Se agrega la ruta de la nueva vista */
-      path: '/home/inicio/Form',
-      name: 'FormView',
-      component: FormView
+      path: '/home/inicio/Historial',
+      name: 'Historial',
+      component: Historial
     }
     ] 
   }

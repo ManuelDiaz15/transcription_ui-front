@@ -13,7 +13,7 @@
 		</v-list-item>
 		<v-list>
 			<v-list-item-title class=text-center>
-                Menú de Navegación
+                {{ Mnavig1 }}
 			</v-list-item-title>
 			<v-divider></v-divider>
             <v-list-group
@@ -40,6 +40,7 @@
 </template>
 
 <script lang="ts">
+  import { Vue } from 'vue-property-decorator';
   import { Component} from 'vue-property-decorator';
   import { INavigator } from '@/model/util/INavigator'; 
 
@@ -48,25 +49,27 @@
     })
     
   
-	export default class AppNavigator {
+	export default class AppNavigator extends Vue{
+		public Mnavig1 = this.$t("Navig.Mnavig1");
+
         public selected = 0;
 		private currentRoute = '';
 		public items: Array<INavigator> = [
 				{
-					title: 'Inicio' as string,
+					title: this.$t("Navig.Mnavig2") as string,
 					urlName: 'MainInicio',
 					parent: 'dashboardInicio',
 					subMenus: [],
 				},
 				{ /* se creo otra opcion para el menu */
-					title: 'Listado de Transcripcion' as string,
+					title: this.$t("Navig.Mnavig3") as string,
 					urlName: 'ListView',
 					parent: 'dashboardInicio',
 					subMenus: [],
 				},
 				{ /* se creo otra opcion para el menu */
-					title: 'get' as string,
-					urlName: 'FormView',
+					title: this.$t("Navig.Mnavig5") as string,
+					urlName: 'Historial',
 					parent: 'dashboardInicio',
 					subMenus: [],
 				}
@@ -110,3 +113,13 @@
   font-family: "nunito", sans-serif !important;
 }
 </style>
+
+
+
+
+
+
+
+
+
+

@@ -26,7 +26,7 @@
 				<v-list>
 					<v-list-item @click="listenLogout"> 
 					<v-list-item-title class="btn btn-info btn-lg"> 
-						Cerrar Sesión
+						{{ Mnavig4 }}
 					</v-list-item-title>
 					</v-list-item>
 				</v-list>
@@ -42,6 +42,7 @@
 	})
 	
 	export default class AppBar extends Vue {
+		public Mnavig4 = this.$t("Navig.Mnavig4");
 		public locales_array = LOCALES;
 		public locale_default = defaultLocale;
 		public updateLanguage(lang: Locales) {
